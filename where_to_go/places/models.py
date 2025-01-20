@@ -25,3 +25,11 @@ class Place(models.Model):
         ordering = ['title']
 
 
+class Image(models.Model):
+    sequence_number = models.SmallIntegerField()
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='images/')
+    
+    def __str__(self):
+        return f'{self.sequence_number} {self.title}'
+    
